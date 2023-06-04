@@ -1,5 +1,7 @@
 body {
   background: rgb(243, 244, 246);
+  background-image: url(../public/Images/greenbg.jpeg);
+  background-repeat: no-repeat;
 }
 H1 {
   text-align: center;
@@ -18,15 +20,19 @@ p {
   margin: 3rem;
 }
 .form-control {
+  margin-left: 1rem;
+  margin-top: 0.2rem;
   height: 23px;
-  width: 30vw;
   font-size: 12px;
   text-align: left;
   border-radius: 5px;
   border: 1px solid rgb(221, 215, 215);
 }
+.button {
+  display: flex;
+  margin-left: 1rem;
+}
 button {
-  margin-top: 10px;
   font-size: 16px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 200ms ease-in-out;
@@ -65,35 +71,29 @@ button:hover {
   height: 19.5rem;
 }
 .weather-app {
-  background-image: url(../public/Images/weather-image2.jpg);
+  background-image: url(../public/Images/rain\ drops.jpg);
 }
 .weather-details {
   position: relative;
   left: 1rem;
-  top: 3rem;
+  top: 1rem;
 }
 .town-time-des {
-  position: relative;
-  bottom: 3rem;
+  display: grid;
+  justify-content: center;
   font-weight: 400;
-  line-height: 2rem;
-  color: hsl(0, 0%, 8%);
+  line-height: 1.2rem;
+  color: #122c83;
 }
 .town {
   letter-spacing: 1px;
   font-size: 20px;
 }
-.icon img {
-  position: relative;
 
-  margin: 0;
-  bottom: 2rem;
-  font-size: 300;
-}
 .temp {
   color: hsl(0, 0%, 8%);
-
   font-size: 25px;
+  margin-top: 2rem;
 }
 
 .unit {
@@ -106,9 +106,7 @@ button:hover {
   color: hsl(0, 0%, 8%);
   font-weight: 800;
   font-size: 12px;
-  position: relative;
-  left: 10rem;
-  bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .list {
@@ -143,7 +141,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: rgba(245, 103, 8, 0.897);
+  color: #122c83;
 }
 footer {
   font-family: monospace;
