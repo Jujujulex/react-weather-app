@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherDetail from "./WeatherDetail";
+
 import axios from "axios";
 
 export default function Form(props) {
@@ -9,6 +10,7 @@ export default function Form(props) {
   function showWeather(response) {
     setWeather({
       ready: true,
+      coord: response.data.coord,
       town: response.data.name,
       temperature: Math.round(response.data.main.temp),
       date: new Date(response.data.dt * 1000),
@@ -34,6 +36,19 @@ export default function Form(props) {
     setCity(event.target.value);
   }
 
+  function searchLocation(position) {
+    let apiKey = "40305f3309a7ac55bca48e8adec8ae7a";
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(showWeather);
+  }
+
+  function geoLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
+  }
+
   if (weather.ready) {
     return (
       <div>
@@ -44,20 +59,26 @@ export default function Form(props) {
                 <input
                   type="text"
                   className="form-control"
+                  id="form-control"
                   placeholder="Enter a city"
                   onChange={updateCity}
                   autoFocus="on"
                 />
               </div>
             </div>
-            <div className="col-md-3 button">
-              <button type="submit" className="blue-button">
-                Search
+            <div className="col-3 button">
+              <button type="submit" className="blue-button" title="search">
+                <i className="fas fa-magnifying-glass" />
               </button>
 
-              <div className="col-md-3">
-                <button type="submit" className="orange-button">
-                  Current
+              <div className="col-3">
+                <button
+                  type="button"
+                  title="current-location"
+                  className="orange-button"
+                  onClick={geoLocation}
+                >
+                  <i className="fas fa-solid fa-location-dot" />
                 </button>
               </div>
             </div>

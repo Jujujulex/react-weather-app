@@ -22,7 +22,7 @@ p {
 .form-control {
   margin-left: 1rem;
   margin-top: 0.2rem;
-  height: 23px;
+  height: 25px;
   font-size: 12px;
   text-align: left;
   border-radius: 5px;
@@ -46,32 +46,31 @@ button:hover {
   background: orange;
   border: none;
   height: 30px;
-  font-size: 14px;
+  font-size: 10px;
   border-radius: 0.5rem;
   margin-left: 1rem;
 }
 .blue-button {
   height: 30px;
-  font-size: 14px;
+  font-size: 10px;
   background: rgb(32, 32, 199);
   color: #fff;
   border: none;
   border-radius: 0.5rem;
 }
-/*.container {
-  position: relative;
-  left: 27%;
-  margin: 1rem;
-}*/
+
 .weather-app {
-  border: 1px solid gray;
-  border-radius: 5px;
+  border: 1px solid #acd3c6;
+  border-radius: 10px;
   width: 12.5cm;
   margin-top: 0.5rem;
   height: 19.5rem;
+
+  justify-content: center;
+  align-items: center;
 }
 .weather-app {
-  background-image: url(../public/Images/rain\ drops.jpg);
+  background-color: #acd3c6;
 }
 .weather-details {
   position: relative;
@@ -82,7 +81,7 @@ button:hover {
   display: grid;
   justify-content: center;
   font-weight: 400;
-  line-height: 1.2rem;
+  line-height: 1.3rem;
   color: #122c83;
 }
 .town {
@@ -118,25 +117,9 @@ button:hover {
   margin: 16px;
 }
 
-li {
-  background-color: bisque;
-  list-style: none;
-  letter-spacing: 0.5px;
-  word-spacing: 10px;
-  transition: all 200ms ease-in-out;
-  width: 11rem;
-  border-radius: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-li:hover {
-  background: #fff;
-}
 .weather-forcast-temperature-min {
   font-size: 12px;
   opacity: 0.6;
-}
-ul {
-  margin-bottom: 6px;
 }
 
 a {
@@ -152,4 +135,35 @@ footer {
 .weather-details .active {
   color: rgba(13, 13, 14, 0.904);
   cursor: default;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    text-align: center;
+  }
+  form {
+    position: relative;
+    left: 1rem;
+  }
+  .form-control {
+    width: 10rem;
+  }
+  .button {
+    margin-top: 0.5rem;
+  }
+  .container {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+
+    flex-wrap: wrap;
+  }
+
+  .weather-app {
+    position: relative;
+
+    width: 11cm;
+    margin-top: 0.5rem;
+    height: 19.5rem;
+  }
 }

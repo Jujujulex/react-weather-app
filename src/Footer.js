@@ -4,7 +4,10 @@ export default function Footer() {
   return (
     <div>
       <footer>
-        <a href="https://github.com/Jujujulex/Weather-App" alt="github link">
+        <a
+          href="https://github.com/Jujujulex/react-weather-app"
+          alt="github link"
+        >
           Open-source code
         </a>
         , by Juliet Amobi
